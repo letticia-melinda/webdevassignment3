@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <script>
+            function ENQUIRIES () {
+                var name =
+                    document.forms.RegForm.Name.value;
+                var email =
+                    document.forms.RegForm.EMail.value;
+                var number =
+                    document.forms.RegForm.Number.value;
+             var enquiry =
+                    document.forms.RegForm.Enquiry.value;
+                var regEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;  //Javascript reGex for Email Validation.
+                var regNumber=/^\d{10}$/;                                        // Javascript reGex for Phone Number validation.
+                var regName = /\d+$/g;                                    // Javascript reGex for Name validation
+ 
+                if (name == "" || regName.test(name)) {
+                    window.alert("Please enter your name.");
+                    name.focus();
+                    return false;
+                }
+ 
+                if (enquiry == "") {
+                    window.alert("Please enter your enquiry.");
+                    enquiry.focus();
+                    return false;
+                }
+                 
+                if (email == "" || !regEmail.test(email)) {
+                    window.alert("Please enter a valid e-mail address.");
+                    email.focus();
+                    return false;
+                }
+                  
+               
+                if (number == "" || !regNumber.test(number)) {
+                window.alert("Please enter valid  number.");
+                number.focus();
+                    return false;
+                }
+ window.alert("enquiry submitter successfully")
+               return true;
+            }
+        </script>
+ 
+        <style>
+            div {
+                background-color: rgb(235, 139, 14);
+                box-sizing: border-box;
+                width: 100%;
+                border: 100px solid black;
+                float: left;
+                align-content: center;
+                align-items: center;
+            }
+
+ 
+            form {
+                margin: 0 auto;
+                width: 600px;
+            }
+        </style>
+    </head>
+ 
+    <body style = " background-color: rgb(235, 139, 14)"  >
+        <h1 style="text-align: center;">ENQUIRY FORM</h1>
+        <form name="RegForm" onsubmit="return ENQUIRIES()" method="post">
+             
+ <input type="text" placeholder="Name"
+                            size="65" name="Name" /></p>
+ 
+            <br />
+             
+
+             
+ <input type="text" placeholder="E-mail Address"
+                            size="65" name="EMail" /></p>
+ 
+            <br />
+             
+
+             
+ <input type="text" placeholder="Number"
+                        size="65" name="Number" /></p>
+ 
+            <br />
+           
+            <input type="text" placeholder="Enquiry"
+            size="65" name="Enquiry" /></p>
+</p>
+
+<br />
+
+ <br />
+
+ 
+             
+<p>
+                <input type="submit"
+                    value="send" name="Submit" />
+                
+            </p>
+ 
+        </form>
+    </body>
+</html>
